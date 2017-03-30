@@ -57,7 +57,6 @@ int main(int argc, char* argv[])
     // read infile's BITMAPFILEHEADER
     BITMAPFILEHEADER bf;
     fread(&bf, sizeof(BITMAPFILEHEADER), 1, inptr);
- 
    
     // read infile's BITMAPINFOHEADER
     BITMAPINFOHEADER bi;
@@ -83,27 +82,21 @@ int main(int argc, char* argv[])
 
      // determine padding for scanlines
     int old_padding =  (4 - (old_width * sizeof(RGBTRIPLE)) % 4) % 4;
- 
     int new_padding =  (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
-    
-
+   
     // calculation of biSizeImage and bfSize in the new image file.
- 
     bi.biSizeImage = abs(bi.biHeight) * ((bi.biWidth * sizeof (RGBTRIPLE)) + new_padding);
     bf.bfSize = bi.biSizeImage + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER); 
     
     // write outfile's BITMAPFILEHEADER
-  
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
     
     // write outfile's BITMAPINFOHEADER
-
     fwrite(&bi, sizeof(BITMAPINFOHEADER), 1, outptr);
 
     // iterate over infile's scanlines
     // iterate over the rows of the image.
     for (int row = 0, biHeight = abs(old_height); row < biHeight; row++)
-    
     {   
         //iterate over n pixels to add n rows
         for (int pixel = 0; pixel < n; pixel++)
