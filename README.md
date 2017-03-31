@@ -1,4 +1,3 @@
 # cs50-pset4
 
-This is Harvard CS50 Problem Set 2. In the bmp folder--'whodunit.c' 
-and 'resize.c'.
+This is Harvard CS50 Problem Set 2. 'question.txt'. In the bmp folder--'whodunit.c' and 'resize.c'. In the jpg folder--'recover.c'.
