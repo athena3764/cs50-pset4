@@ -1,3 +1,3 @@
 # cs50-pset4
 
-This is Harvard CS50 Problem Set 2 (C language). 'question.txt'. In the bmp folder--'whodunit.c' and 'resize.c'. In the jpg folder--'recover.c'.
+This is Harvard CS50 Problem Set 2 (C language). Please see details in 'question.txt', 'whodunit.c' in the bmp folder and 'resize.c' and 'recover.c' in the jpg folder.
